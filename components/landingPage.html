@@ -1,12 +1,11 @@
-<h1 align="center">Payment App Demo (HTTP API)</h1>
+<h1 align="center">HTTP Mediator Demo (HTTP API)</h1>
 
 <p>
-This site demonstrates a basic implementation of a
-<a href="http://w3c.github.io/webpayments/proposals/web-payments-http-api/#dfn-payment-app">payment application</a>
-, which can be used to receive a
-<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentrequest">payment request</a>
-and produce a
-<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentresponse">payment response</a>.
+This site demonstrates a basic implementation of a payment mediator which can
+be used to register payment apps, and route
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentrequest">payment request</a>s
+and
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentresponse">payment response</a>s.
 This demo is designed for non-interactive payments use cases. For example,
 auto payment of utility bills, business-to-business payments, a car paying
 for a parking spot (Internet of Things), etc. For more information, see the
@@ -14,23 +13,30 @@ for a parking spot (Internet of Things), etc. For more information, see the
 </p>
 
 <p>
-If you just want to try the Web Payments HTTP API out, the
-<a>Payment Mediator Demo</a> is probably the best place to start.
+The steps below will guide you through the basic Web Payments HTTP API
+ecosystem.
 </p>
 
 <p>
-If you are a software developer and need a payment application that follows
-the HTTP API, the following things may be of interest to you:
+Before you can process payments, you must first install a payment app.
 </p>
 
-<ul>
+<p>
+To perform a purchase with your payment app, your software will:
+</p>
+
+<ol>
   <li>
-Setup a new payment app. Try <code>curl {{$root.app.config.data.baseUri}}/apps/legacy-card</code>
+Retrieve a payment request from a merchant.
   </li>
   <li>
-Submit a
-<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentrequest">payment request</a>.
-Do an HTTP POST of a payment request to <code>{{$root.app.config.data.baseUri}}/apps/legacy-card/{your-payment-app-id}</code>.
+Send the payment request to your payment app.
+  </li>
+  <li>
+Receive a payment response from your payment app.
+  </li>
+  <li>
+Send the payment response to the merchant.
   </li>
 </ul>
 
@@ -38,7 +44,4 @@ Do an HTTP POST of a payment request to <code>{{$root.app.config.data.baseUri}}/
 The source for this demonstration can be found on Github under the
 <a href="https://github.com/digitalbazaar/http-mediator-demo.web-payments.io">digitalbazaar/http-mediator-demo.web-payments.io</a>
 project.
-</p>
-
-<p>
 </p>

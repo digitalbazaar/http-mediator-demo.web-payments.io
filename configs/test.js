@@ -1,5 +1,5 @@
 /*
- * http-mediator-demo.http-mediator-demo.web-payments.io test configuration.
+ * http-mediator-demo.web-payments.io test configuration.
  *
  * Copyright (c) 2016 Digital Bazaar, Inc. All rights reserved.
  */
@@ -30,7 +30,7 @@ config.server.baseUri = 'https://' + config.server.host;
 
 // views
 // branding
-config.views.brand.name = 'Payment App Demo Test';
+config.views.brand.name = 'HTTP Payment Mediator Demo Test';
 // update view vars
 config.views.vars.baseUri = config.server.baseUri;
 config.views.vars.title = config.views.brand.name;
