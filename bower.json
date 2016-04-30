@@ -1,0 +1,27 @@
+{
+  "name": "http-mediator-demo.web-payments.io",
+  "version": "0.0.1",
+  "moduleType": [
+    "amd"
+  ],
+  "private": true,
+  "main": [
+    "./main.js"
+  ],
+  "description": "Web Payments Payment Application demo bower dependencies.",
+  "dependencies": {
+    "bedrock-angular": "^2.0.0",
+    "bedrock-angular-alert": "^2.0.0",
+    "bedrock-angular-filters": "^2.0.0",
+    "bedrock-angular-form": "^2.0.0",
+    "bedrock-angular-lazy-compile": "^2.0.0",
+    "bedrock-angular-modal": "^3.0.0",
+    "bedrock-angular-model": "^2.0.0",
+    "bedrock-angular-navbar": "^3.0.0",
+    "bedrock-angular-resource": "^2.0.0",
+    "bedrock-angular-selector": "^2.0.0",
+    "bedrock-angular-session": "^2.0.0",
+    "bedrock-angular-ui": "^2.0.0",
+    "lodash": "^4.1.0"
+  }
+}

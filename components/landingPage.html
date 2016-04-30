@@ -1,0 +1,44 @@
+<h1 align="center">Payment App Demo (HTTP API)</h1>
+
+<p>
+This site demonstrates a basic implementation of a
+<a href="http://w3c.github.io/webpayments/proposals/web-payments-http-api/#dfn-payment-app">payment application</a>
+, which can be used to receive a
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentrequest">payment request</a>
+and produce a
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentresponse">payment response</a>.
+This demo is designed for non-interactive payments use cases. For example,
+auto payment of utility bills, business-to-business payments, a car paying
+for a parking spot (Internet of Things), etc. For more information, see the
+<a href="http://w3c.github.io/webpayments/proposals/web-payments-http-api/">Web Payments HTTP API specification</a>.
+</p>
+
+<p>
+If you just want to try the Web Payments HTTP API out, the
+<a>Payment Mediator Demo</a> is probably the best place to start.
+</p>
+
+<p>
+If you are a software developer and need a payment application that follows
+the HTTP API, the following things may be of interest to you:
+</p>
+
+<ul>
+  <li>
+Setup a new payment app. Try <code>curl {{$root.app.config.data.baseUri}}/apps/legacy-card</code>
+  </li>
+  <li>
+Submit a
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentrequest">payment request</a>.
+Do an HTTP POST of a payment request to <code>{{$root.app.config.data.baseUri}}/apps/legacy-card/{your-payment-app-id}</code>.
+  </li>
+</ul>
+
+<p>
+The source for this demonstration can be found on Github under the
+<a href="https://github.com/digitalbazaar/http-mediator-demo.web-payments.io">digitalbazaar/http-mediator-demo.web-payments.io</a>
+project.
+</p>
+
+<p>
+</p>

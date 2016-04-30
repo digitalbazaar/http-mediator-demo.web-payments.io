@@ -1,0 +1,28 @@
+{
+  "name": "http-mediator-demo.web-payments.io",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node http-mediator-demo.web-payments.dev.js",
+    "test": "node http-mediator-demo.web-payments.dev.js test",
+    "postinstall": "bower install && node http-mediator-demo.web-payments.dev.js compile-less"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "bedrock": "^1.2.1",
+    "bedrock-express": "^2.0.2",
+    "bedrock-requirejs": "^2.0.1",
+    "bedrock-server": "^2.1.1",
+    "bedrock-views": "^4.0.1",
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
+    "bedrock-protractor": "^3.0.1",
+    "jsonld": "~0.4.11",
+    "request": "~2.72.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "directories": {},
+  "main": "./lib/index"
+}
