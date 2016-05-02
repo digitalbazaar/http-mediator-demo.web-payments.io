@@ -52,12 +52,21 @@ config.express.session.key = 'http-mediator-demo.web-payments.io.sid';
 config.express.session.prefix = 'http-mediator-demo.web-payments.io.';
 
 // view variables
-config.views.brand.name = 'http-mediator-demo.web-payments.io';
+config.views.brand.name = 'Payment Mediator';
 config.views.vars.baseUri = config.server.baseUri;
 config.views.vars.title = config.views.brand.name;
 config.views.vars.siteTitle = config.views.brand.name;
 config.views.vars.supportDomain = config.server.domain;
 config.views.vars.style.brand.alt = config.views.brand.name;
 config.views.vars.minify = true;
+
+// http-mediator-demo.web-payments.io config
+config.views.vars['payments'] = {};
+config.views.vars.payments.registerPaymentAppUrl =
+  'http://payment-app-demo.web-payments.io/apps';
+config.views.vars.payments.targetPurchaseUrl =
+  'http://merchant-demo.web-payments.io/movies/dr-strangelove';
+config.views.vars.payments.paymentRequestUrl =
+  'http://merchant-demo.web-payments.io/movies/dr-strangelove/requests';
 
 require('./http-mediator-demo.web-payments.io-secrets');
