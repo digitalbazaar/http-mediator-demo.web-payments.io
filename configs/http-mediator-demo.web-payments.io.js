@@ -52,7 +52,7 @@ config.express.session.key = 'http-mediator-demo.web-payments.io.sid';
 config.express.session.prefix = 'http-mediator-demo.web-payments.io.';
 
 // view variables
-config.views.brand.name = 'Payment Mediator';
+config.views.brand.name = 'Payment Mediator Demo';
 config.views.vars.baseUri = config.server.baseUri;
 config.views.vars.title = config.views.brand.name;
 config.views.vars.siteTitle = config.views.brand.name;
