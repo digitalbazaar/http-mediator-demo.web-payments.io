@@ -34,8 +34,6 @@ function factory($location, $scope, hmdDemoService, config, brAlertService) {
     hmdDemoService.accessTargetPurchase(function(req, res) {
       self.accessTargetPurchaseRawRequest = req;
       self.accessTargetPurchaseRawResponse = res;
-      // FIXME: Angular's $http service destroys headers on 402s
-      self.accessTargetPurchaseRawResponse += "location: " + paymentRequestUrl;
     }).then(function(response) {
       console.log("Requesting access should fail with 402 Payment Required");
     }, function(err) {
