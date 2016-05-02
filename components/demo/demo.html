@@ -32,19 +32,35 @@ Before you can process payments, you must first install a payment app.<br/>
 <button type="button" class="btn btn-primary" ng-click="model.registerPaymentApp()">Install Payment App</button>
 </p>
 
-<div ng-hide="!(model.registrationRawRequest)">
-  <p>Registration request:</p>
-  <pre>{{model.registrationRawRequest}}</pre>
+<div class="panel panel-default" ng-hide="!(model.registrationRawRequest)">
+  <div class="panel-heading">HTTP request
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+  </div>
+  <div class="panel-body">
+    <pre>{{model.registrationRawRequest}}</pre>
+  </div>
 </div>
 
-<div ng-hide="!(model.registrationRawResponse)">
-  <p>Registration response:</p>
-  <pre>{{model.registrationRawResponse}}</pre>
+<div class="panel panel-default" ng-hide="!(model.registrationRawResponse)">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    HTTP response</div>
+  <div class="panel-body">
+    <pre>{{model.registrationRawResponse}}</pre>
+  </div>
 </div>
 
-<div ng-hide="!(model.paymentApp)">
-  <p>You have successfully installed a payment application:</p>
-  <pre>{{model.paymentApp|json}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentApp)">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    Payment App
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-success" style="text-align: center;" role="alert">
+      <p class="lead">Payment App install successful!</p>
+    </div>
+    <pre>{{model.paymentApp|json}}</pre>
+  </div>
 </div>
 
 <h2>Step #2: Perform a Purchase</h2>
@@ -73,58 +89,100 @@ Send the payment response to the merchant.
 <h3 ng-hide="!(model.accessTargetPurchaseRawRequest)">
   Step 2.1: Attempt to access payment-protected resource.
 </h3>
-<div ng-hide="!(model.accessTargetPurchaseRawRequest)">
-  <p>Accessing resource request:</p>
-  <pre>{{model.accessTargetPurchaseRawRequest}}</pre>
+<div class="panel panel-default" ng-hide="!(model.accessTargetPurchaseRawRequest)">
+  <div class="panel-heading">
+    HTTP request
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+  </div>
+  <div class="panel-body">
+    <pre>{{model.accessTargetPurchaseRawRequest}}</pre>
+  </div>
 </div>
-
-<div ng-hide="!(model.accessTargetPurchaseRawResponse)">
-  <p>Accessing resource response:</p>
-  <pre>{{model.accessTargetPurchaseRawResponse}}</pre>
+<div class="panel panel-default" ng-hide="!(model.accessTargetPurchaseRawResponse)">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    HTTP response
+  </div>
+  <div class="panel-body">
+    <pre>{{model.accessTargetPurchaseRawResponse}}</pre>
+  </div>
 </div>
 
 <h3 ng-hide="!(model.paymentRequestRawRequest)">
   Step 2.2: Retrieve a payment request from a merchant.
 </h3>
-<div ng-hide="!(model.paymentRequestRawRequest)">
-  <p>Retrieve PaymentRequest request:</p>
-  <pre>{{model.paymentRequestRawRequest}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentRequestRawRequest)">
+  <div class="panel-heading">
+    HTTP request
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+  </div>
+  <div class="panel-body">
+    <pre>{{model.paymentRequestRawRequest}}</pre>
+  </div>
 </div>
-
-<div ng-hide="!(model.paymentRequestRawResponse)">
-  <p>Retrieve PaymentRequest response:</p>
-  <pre>{{model.paymentRequestRawResponse}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentRequestRawResponse)">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    HTTP response
+  </div>
+  <div class="panel-body">
+    <pre>{{model.paymentRequestRawResponse}}</pre>
+  </div>
 </div>
 
 <h3 ng-hide="!(model.paymentRequestPostRawRequest)">
   Step 2.3: Process the payment request with your payment app.
 </h3>
-<div ng-hide="!(model.paymentRequestPostRawRequest)">
-  <p>Send PaymentRequest to payment app request:</p>
-  <pre>{{model.paymentRequestPostRawRequest}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentRequestPostRawRequest)">
+  <div class="panel-heading">
+    HTTP request
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+  </div>
+  <div class="panel-body">
+    <pre>{{model.paymentRequestPostRawRequest}}</pre>
+  </div>
 </div>
-
-<div ng-hide="!(model.paymentRequestPostRawResponse)">
-  <p>Send PaymentRequest to payment app response:</p>
-  <pre>{{model.paymentRequestPostRawResponse}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentRequestPostRawResponse)">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    HTTP response
+  </div>
+  <div class="panel-body">
+    <pre>{{model.paymentRequestPostRawResponse}}</pre>
+  </div>
 </div>
 
 <h3 ng-hide="!(model.paymentResponsePostRawRequest)">
   Step 2.4: Send the payment response to the merchant.
 </h3>
-<div ng-hide="!(model.paymentResponsePostRawRequest)">
-  <p>Send PaymentResponse to merchant request:</p>
-  <pre>{{model.paymentResponsePostRawRequest}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentResponsePostRawRequest)">
+  <div class="panel-heading">
+    HTTP request
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+  </div>
+  <div class="panel-body">
+    <pre>{{model.paymentResponsePostRawRequest}}</pre>
+  </div>
 </div>
-
-<div ng-hide="!(model.paymentResponsePostRawResponse)">
-  <p>Send PaymentResponse to merchant response:</p>
-  <pre>{{model.paymentResponsePostRawResponse}}</pre>
+<div class="panel panel-default" ng-hide="!(model.paymentResponsePostRawResponse)">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    HTTP response
+  </div>
+  <div class="panel-body">
+    <pre>{{model.paymentResponsePostRawResponse}}</pre>
+  </div>
 </div>
 
 <div ng-hide="!(model.paymentSuccessful)" class="alert alert-success"
 style="text-align: center;" role="alert">
-  <p class="lead">Payment Successful!</p>
+  <p class="lead">
+    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    &nbsp;&nbsp;&nbsp;
+    Payment Successful!
+    &nbsp;&nbsp;&nbsp;
+    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+</p>
 </div>
 
 </div>
