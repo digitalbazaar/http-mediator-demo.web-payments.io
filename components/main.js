@@ -1,6 +1,7 @@
 define([
-  'angular'
-], function(angular) {
+  'angular',
+  './demo/demo'
+], function(angular, demoController) {
 
 'use strict';
 
@@ -11,7 +12,7 @@ module.config(function($routeProvider) {
   $routeProvider
     .when('/', {
       title: 'Welcome',
-      templateUrl: requirejs.toUrl('http-mediator-demo/landingPage.html')
+      templateUrl: requirejs.toUrl('http-mediator-demo/demo/demo.html')
     });
 });
 

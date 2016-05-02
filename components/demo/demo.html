@@ -1,0 +1,130 @@
+<div ng-controller="hmdDemoController as model">
+
+<h1 align="center">Payment Mediator Demo (HTTP API)</h1>
+
+<p>
+This site demonstrates a basic implementation of a payment mediator which can
+be used to register payment apps, and route
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentrequest">payment request</a>s
+and
+<a href="http://w3c.github.io/webpayments/proposals/core-messages/#paymentresponse">payment response</a>s.
+This demo is designed for non-interactive payments use cases. For example,
+auto payment of utility bills, business-to-business payments, a car paying
+for a parking spot (Internet of Things), etc. For more information, see the
+<a href="http://w3c.github.io/webpayments/proposals/web-payments-http-api/">Web Payments HTTP API specification</a>.
+</p>
+
+<p>
+The source for this demonstration can be found on Github under the
+<a href="https://github.com/digitalbazaar/http-mediator-demo.web-payments.io">digitalbazaar/http-mediator-demo.web-payments.io</a>
+project.
+</p>
+
+<p>
+The steps below will guide you through the basic Web Payments HTTP API
+ecosystem.
+</p>
+
+<h2>Step #1: Install Payment App</h2>
+
+<p>
+Before you can process payments, you must first install a payment app.<br/>
+<button type="button" class="btn btn-primary" ng-click="model.registerPaymentApp()">Install Payment App</button>
+</p>
+
+<div ng-hide="!(model.registrationRawRequest)">
+  <p>Registration request:</p>
+  <pre>{{model.registrationRawRequest}}</pre>
+</div>
+
+<div ng-hide="!(model.registrationRawResponse)">
+  <p>Registration response:</p>
+  <pre>{{model.registrationRawResponse}}</pre>
+</div>
+
+<div ng-hide="!(model.paymentApp)">
+  <p>You have successfully installed a payment application:</p>
+  <pre>{{model.paymentApp|json}}</pre>
+</div>
+
+<h2>Step #2: Perform a Purchase</h2>
+
+<p>
+To perform a purchase with your payment app, your software will:
+</p>
+
+<ol>
+  <li>
+Attempt to access payment-protected resource.
+  </li>
+  <li>
+Retrieve a payment request from a merchant.
+  </li>
+  <li>
+Process the payment request with your payment app.
+  </li>
+  <li>
+Send the payment response to the merchant.
+  </li>
+</ol>
+
+<button type="button" class="btn btn-primary" ng-disabled="!(model.enablePurchasing)" ng-click="model.performPurchase()">Perform a Purchase</button>
+
+<h3 ng-hide="!(model.accessTargetPurchaseRawRequest)">
+  Step 2.1: Attempt to access payment-protected resource.
+</h3>
+<div ng-hide="!(model.accessTargetPurchaseRawRequest)">
+  <p>Accessing resource request:</p>
+  <pre>{{model.accessTargetPurchaseRawRequest}}</pre>
+</div>
+
+<div ng-hide="!(model.accessTargetPurchaseRawResponse)">
+  <p>Accessing resource response:</p>
+  <pre>{{model.accessTargetPurchaseRawResponse}}</pre>
+</div>
+
+<h3 ng-hide="!(model.paymentRequestRawRequest)">
+  Step 2.2: Retrieve a payment request from a merchant.
+</h3>
+<div ng-hide="!(model.paymentRequestRawRequest)">
+  <p>Retrieve PaymentRequest request:</p>
+  <pre>{{model.paymentRequestRawRequest}}</pre>
+</div>
+
+<div ng-hide="!(model.paymentRequestRawResponse)">
+  <p>Retrieve PaymentRequest response:</p>
+  <pre>{{model.paymentRequestRawResponse}}</pre>
+</div>
+
+<h3 ng-hide="!(model.paymentRequestPostRawRequest)">
+  Step 2.3: Process the payment request with your payment app.
+</h3>
+<div ng-hide="!(model.paymentRequestPostRawRequest)">
+  <p>Send PaymentRequest to payment app request:</p>
+  <pre>{{model.paymentRequestPostRawRequest}}</pre>
+</div>
+
+<div ng-hide="!(model.paymentRequestPostRawResponse)">
+  <p>Send PaymentRequest to payment app response:</p>
+  <pre>{{model.paymentRequestPostRawResponse}}</pre>
+</div>
+
+<h3 ng-hide="!(model.paymentResponsePostRawRequest)">
+  Step 2.4: Send the payment response to the merchant.
+</h3>
+<div ng-hide="!(model.paymentResponsePostRawRequest)">
+  <p>Send PaymentRequest to payment app request:</p>
+  <pre>{{model.paymentResponsePostRawRequest}}</pre>
+</div>
+
+<div ng-hide="!(model.paymentResponsePostRawResponse)">
+  <p>Send PaymentRequest to payment app response:</p>
+  <pre>{{model.paymentResponsePostRawResponse}}</pre>
+</div>
+
+<div ng-hide="!(model.paymentSuccessful)" class="alert alert-success"
+style="text-align: center;" role="alert">
+  <p class="lead">Payment Successful!</p>
+</div>
+
+</div>
